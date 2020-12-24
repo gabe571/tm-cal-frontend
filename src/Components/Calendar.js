@@ -27,7 +27,11 @@ return (
   {calendar.map(week => 
   <div> 
     {week.map(day =>
-    <div className="day">{day.format("D")}</div>
+    <div className="day" onClick={() => setValue(day)}> 
+    <div
+        className={value.isSame(day, "day") ? "selected" : ""}>
+    {day.format("D")}</div>
+    </div>
             )
          }
       </div>)
