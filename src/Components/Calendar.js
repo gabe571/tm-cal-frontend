@@ -1,5 +1,6 @@
 import React from 'react'
 import moment from "moment"
+import CalStyles from "../CalStyles.css"
 
 export default function Calendar() {
     const value = moment() //Javascript Library
@@ -14,14 +15,13 @@ export default function Calendar() {
         )
     } // mapping over each day of the month
 return ( 
- <div>  
-  {
-      calendar.map(week => <div> 
-          {
-              week.map(day => <div>
-                 {day.format("D")} 
-              </div>)
-          }
+ <div className="calendar">  
+  {calendar.map(week => 
+  <div> 
+    {week.map(day =>
+    <div className="day">{day.format("D")}</div>
+            )
+         }
       </div>)
   }
  </div>
